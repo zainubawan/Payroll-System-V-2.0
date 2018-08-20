@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Payroll.Data;
 using Payroll.Models;
 using Payroll.Services;
+using Payroll.Models.TimesheetViewModels;
 
 namespace Payroll
 {
@@ -28,6 +29,9 @@ namespace Payroll
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<TimesheetContext>(options => 
+                options.UseInMemoryDatabase("Timesheets"));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
