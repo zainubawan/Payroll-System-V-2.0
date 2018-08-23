@@ -11,7 +11,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Payroll.Data;
 using Payroll.Models;
 using Payroll.Services;
-using Payroll.Models.TimesheetViewModels;
 
 namespace Payroll
 {
@@ -30,9 +29,6 @@ namespace Payroll
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDbContext<TimesheetContext>(options => 
-                options.UseInMemoryDatabase("Timesheets"));
-
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
@@ -41,6 +37,9 @@ namespace Payroll
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();
+
+            services.AddDbContext<PayrollContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("PayrollContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
