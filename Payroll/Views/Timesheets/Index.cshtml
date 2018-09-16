@@ -12,12 +12,33 @@
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Status)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.HoursWorked)
-                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                Monday
+            </th>
+            <th>
+                Tuesday
+            </th>
+            <th>
+                Wednesday
+            </th>
+            <th>
+                Thursday
+            </th>
+            <th>
+                Friday
+            </th>
+            <th>
+                Saturday
+            </th>
+            <th>
+                Sunday
+            </th>
+            <th>
+                Total hours worked
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -26,6 +47,27 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Thur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fri)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sun)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.HoursWorked)

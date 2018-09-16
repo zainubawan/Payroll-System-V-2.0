@@ -11,5 +11,12 @@ namespace Payroll.Models
         //public int EmployeeID { get; set; }
         public string Status { get; set; }
         public double HoursWorked { get; set; }
+        public double Mon { get; set; }
+        public double Tue { get; set; }
+        public double Wed { get; set; }
+        public double Thur { get; set; }
+        public double Fri { get; set; }
+        public double Sat { get; set; }
+        public double Sun { get; set; }
     }
 }
