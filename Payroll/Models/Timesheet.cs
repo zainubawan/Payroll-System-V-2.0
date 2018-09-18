@@ -7,6 +7,7 @@ namespace Payroll.Models
 {
     public class Timesheet
     {
+        // TODO: Foreign key with employee
         public int ID { get; set; }
         //public int EmployeeID { get; set; }
         public string Status { get; set; }

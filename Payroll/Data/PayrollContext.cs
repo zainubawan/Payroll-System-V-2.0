@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Payroll.Models;
 
 namespace Payroll.Models
 {
@@ -14,5 +15,7 @@ namespace Payroll.Models
         }
 
         public DbSet<Payroll.Models.Timesheet> Timesheet { get; set; }
+
+        public DbSet<Payroll.Models.Contract> Contract { get; set; }
     }
 }
