@@ -6,22 +6,39 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Payroll.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Payroll.Data;
 
 namespace Payroll.Controllers
 {
+    [Authorize]
     public class TimesheetsController : Controller
     {
         private readonly PayrollContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public TimesheetsController(PayrollContext context)
+        public TimesheetsController(PayrollContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Timesheets
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Timesheet.ToListAsync());
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null)
+            {
+                return Challenge();
+            }
+
+            // TODO: needs to take a lambda expression and fetch timesheets for a particular user
+            var timesheets = await _context.Timesheet
+                .Where(m => m.OwnerId == currentUser.Id)
+                .ToListAsync(); 
+
+            return View(timesheets);
         }
 
         // GET: Timesheets/Details/5
@@ -55,12 +72,21 @@ namespace Payroll.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,Status,HoursWorked")] Timesheet timesheet)
         {
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            if (currentUser == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
             if (ModelState.IsValid)
             {
+                timesheet.OwnerId = currentUser.Id;
                 _context.Add(timesheet);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(timesheet);
         }
 

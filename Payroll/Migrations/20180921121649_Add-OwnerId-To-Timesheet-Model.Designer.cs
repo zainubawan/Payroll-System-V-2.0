@@ -11,9 +11,10 @@ using System;
 namespace Payroll.Migrations
 {
     [DbContext(typeof(PayrollContext))]
-    partial class PayrollContextModelSnapshot : ModelSnapshot
+    [Migration("20180921121649_Add-OwnerId-To-Timesheet-Model")]
+    partial class AddOwnerIdToTimesheetModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
