@@ -3,15 +3,13 @@
 @{
     ViewData["Title"] = "Create";
 }
-
-<h2>Create</h2>
-
-<h4>Timesheet</h4>
+<hr></hr>
+<h4>New Timesheet</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!-- <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Status" class="control-label"></label>
                 <input asp-for="Status" class="form-control" />
@@ -21,6 +19,41 @@
                 <label asp-for="HoursWorked" class="control-label"></label>
                 <input asp-for="HoursWorked" class="form-control" />
                 <span asp-validation-for="HoursWorked" class="text-danger"></span>
+            </div> -->
+            <div class="form-group">
+                <label asp-for="Mon" class="control-label"></label>
+                <input asp-for="Mon" class="form-control" />
+                <span asp-validation-for="Mon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tue" class="control-label"></label>
+                <input asp-for="Tue" class="form-control" />
+                <span asp-validation-for="Tue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Wed" class="control-label"></label>
+                <input asp-for="Wed" class="form-control" />
+                <span asp-validation-for="Wed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Thur" class="control-label"></label>
+                <input asp-for="Thur" class="form-control" />
+                <span asp-validation-for="Thur" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fri" class="control-label"></label>
+                <input asp-for="Fri" class="form-control" />
+                <span asp-validation-for="Fri" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sat" class="control-label"></label>
+                <input asp-for="Sat" class="form-control" />
+                <span asp-validation-for="Sat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sun" class="control-label"></label>
+                <input asp-for="Sun" class="form-control" />
+                <span asp-validation-for="Sun" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />

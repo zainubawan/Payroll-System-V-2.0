@@ -13,7 +13,7 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ID" />
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label asp-for="Status" class="control-label"></label>
                 <input asp-for="Status" class="form-control" />
                 <span asp-validation-for="Status" class="text-danger"></span>
@@ -22,6 +22,41 @@
                 <label asp-for="HoursWorked" class="control-label"></label>
                 <input asp-for="HoursWorked" class="form-control" />
                 <span asp-validation-for="HoursWorked" class="text-danger"></span>
+            </div> -->
+             <div class="form-group">
+                <label asp-for="Mon" class="control-label"></label>
+                <input asp-for="Mon" class="form-control" />
+                <span asp-validation-for="Mon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tue" class="control-label"></label>
+                <input asp-for="Tue" class="form-control" />
+                <span asp-validation-for="Tue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Wed" class="control-label"></label>
+                <input asp-for="Wed" class="form-control" />
+                <span asp-validation-for="Wed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Thur" class="control-label"></label>
+                <input asp-for="Thur" class="form-control" />
+                <span asp-validation-for="Thur" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fri" class="control-label"></label>
+                <input asp-for="Fri" class="form-control" />
+                <span asp-validation-for="Fri" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sat" class="control-label"></label>
+                <input asp-for="Sat" class="form-control" />
+                <span asp-validation-for="Sat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sun" class="control-label"></label>
+                <input asp-for="Sun" class="form-control" />
+                <span asp-validation-for="Sun" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />

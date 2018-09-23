@@ -4,42 +4,49 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<div class='timesheets-main-heading'>
+  Your timesheets
+</div>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">
+      <button class="btn btn-primary">
+        New Timesheet
+      </button>
+    </a>
 </p>
-<table class="table">
+
+<table class="table table-bordered table-hover">
     <thead>
-        <tr style="border-top: 1px solid black">
-            <th style="border: 1px solid black">
+        <tr>
+            <th>
                 @Html.DisplayNameFor(model => model.Status)
             </th>
-            <th style="border: 1px solid black">
+            <th>
                 Monday
             </th>
-            <th style="border: 1px solid black">
+            <th>
                 Tuesday
             </th>
-            <th style="border: 1px solid black">
+            <th>
                 Wednesday
             </th>
-            <th style="border: 1px solid black">
+            <th>
                 Thursday
             </th>
-            <th style="border: 1px solid black">
+            <th>
                 Friday
             </th>
-            <th style="border: 1px solid black">
+            <th>
                 Saturday
             </th>
-            <th style="border: 1px solid black">
+            <th>
                 Sunday
             </th>
-            <th style="border: 1px solid black">
+            <th>
                 Total hours worked
             </th>
-            <th style="border: 1px solid black">
+            <th>
               Actions
             </th>
         </tr>
@@ -47,34 +54,34 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td style="border: 1px solid black">
+            <td>
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
-            <td style="border: 1px solid black">
+            <td>
                 @Html.DisplayFor(modelItem => item.Mon)
             </td>
-            <td style="border: 1px solid black">
+            <td>
                 @Html.DisplayFor(modelItem => item.Tue)
             </td>
-            <td style="border: 1px solid black">
+            <td>
                 @Html.DisplayFor(modelItem => item.Wed)
             </td>
-            <td style="border: 1px solid black">
+            <td>
                 @Html.DisplayFor(modelItem => item.Thur)
             </td>
-            <td style="border: 1px solid black">
+            <td>
                 @Html.DisplayFor(modelItem => item.Fri)
             </td>
-            <td style="border: 1px solid black">
+            <td>
                 @Html.DisplayFor(modelItem => item.Sat)
             </td>
-            <td style="border: 1px solid black">
+            <td>
                 @Html.DisplayFor(modelItem => item.Sun)
             </td>
-            <td style="border: 1px solid black">
+            <td>
                 @Html.DisplayFor(modelItem => item.HoursWorked)
             </td>
-            <td style="border: 1px solid black">
+            <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
