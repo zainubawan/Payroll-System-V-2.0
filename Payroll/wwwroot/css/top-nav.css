@@ -1,0 +1,15 @@
+.navbar-brand-main {
+  color: rgb(255, 255, 255);
+  margin-left: -150px;
+}
+
+.navbar,
+.navbar-inverse,
+.navbar-fixed-top {
+  background: #0F2027;
+}
+
+.nav-links-custom {
+  margin-top: 12px;
+  font-size: 1.5em;
+}
