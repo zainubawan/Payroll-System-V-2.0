@@ -9,13 +9,20 @@ namespace Payroll.Models
 {
     public class PayrollContext : DbContext
     {
-        public PayrollContext (DbContextOptions<PayrollContext> options)
+        public PayrollContext(DbContextOptions<PayrollContext> options)
             : base(options)
         {
         }
 
-        public DbSet<Payroll.Models.Timesheet> Timesheet { get; set; }
+        public DbSet<Timesheet> Timesheet { get; set; }
 
-        public DbSet<Payroll.Models.Contract> Contract { get; set; }
+        public DbSet<Contract> Contract { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Timesheet>()
+                .Property(b => b.Status)
+                .HasDefaultValue("Pending");
+        }
     }
 }
