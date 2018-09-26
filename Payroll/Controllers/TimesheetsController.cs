@@ -70,7 +70,7 @@ namespace Payroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Status,HoursWorked")] Timesheet timesheet)
+        public async Task<IActionResult> Create([Bind("Mon,Tue,Wed,Thur,Fri,Sat,Sun,ID,Status,HoursWorked")] Timesheet timesheet)
         {
             var currentUser = await _userManager.GetUserAsync(User);
 
@@ -111,17 +111,20 @@ namespace Payroll.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Status,HoursWorked")] Timesheet timesheet)
+        public async Task<IActionResult> Edit(int id, [Bind("Mon,Tue,Wed,Thur,Fri,Sat,Sun,ID,Status,HoursWorked")] Timesheet timesheet)
         {
             if (id != timesheet.ID)
             {
                 return NotFound();
             }
 
+            var currentUser = await _userManager.GetUserAsync(User);
+
             if (ModelState.IsValid)
             {
                 try
                 {
+                    timesheet.OwnerId = currentUser.Id;
                     _context.Update(timesheet);
                     await _context.SaveChangesAsync();
                 }
