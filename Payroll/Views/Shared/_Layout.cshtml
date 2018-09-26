@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="~/css/site.css" />
         <link rel="stylesheet" href="~/css/timesheet.css" />
         <link rel="stylesheet" href="~/css/top-nav.css" />
+        <link rel="stylesheet" href="~/css/login-partial.css" />
         <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
     </environment>
     <environment exclude="Development">
@@ -22,7 +23,7 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body>
+<body class="main-body-custom">
     @inject SignInManager<ApplicationUser> SignInManager
     @inject UserManager<ApplicationUser> UserManager
 
@@ -73,8 +74,7 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer class="navbar-text navbar-fixed-bottom text-center">
+        <footer class="navbar-text navbar-fixed-bottom text-center footer-text">
             <p>&copy; 2018 Globex Pty. Ltd.</p>
         </footer>
     </div>

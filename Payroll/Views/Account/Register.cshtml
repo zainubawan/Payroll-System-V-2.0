@@ -3,6 +3,7 @@
     ViewData["Title"] = "Register";
 }
 
+<div class="login-partial">
 <h2 class="text-center" style="padding: 20px;">@ViewData["Title"]</h2>
 
 <div class="centered-rows row">
@@ -32,6 +33,8 @@
         </form>
     </div>
 </div>
+</div>
+
 
 @section Scripts {
     @await Html.PartialAsync("_ValidationScriptsPartial")

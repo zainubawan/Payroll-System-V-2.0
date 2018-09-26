@@ -1,0 +1,34 @@
+.login-partial {
+  background: white;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  border-top-right-radius: 1em;
+  border-top-left-radius: 1em;
+  margin-top: 4em;
+  margin-left: 300px;
+  margin-right: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.main-body-custom {
+  background: #e96443;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #904e95, #e96443);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #904e95, #e96443);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.footer-text {
+  color: white;
+}
+
+.timesheet-index-partial {
+  background: white;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  border-top-right-radius: 1em;
+  border-top-left-radius: 1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 900px;
+}
