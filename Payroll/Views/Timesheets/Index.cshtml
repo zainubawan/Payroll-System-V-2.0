@@ -5,91 +5,92 @@
 }
 
 <div class="timesheet-index-partial">
-<div class='timesheets-main-heading'>
-  Your timesheets
-</div>
+    <div class='timesheets-main-heading'>
+        Your timesheets
+    </div>
 
-<p>
-    <a asp-action="Create">
-      <button class="btn btn-primary">
-        New Timesheet
-      </button>
-    </a>
-</p>
+    <p>
+        <a asp-action="Create">
+            <button class="btn btn-primary">
+                New Timesheet
+            </button>
+        </a>
+    </p>
 
-<table class="table table-bordered table-hover">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                Monday
-            </th>
-            <th>
-                Tuesday
-            </th>
-            <th>
-                Wednesday
-            </th>
-            <th>
-                Thursday
-            </th>
-            <th>
-                Friday
-            </th>
-            <th>
-                Saturday
-            </th>
-            <th>
-                Sunday
-            </th>
-            <th>
-                Total hours worked
-            </th>
-            <th>
-              Actions
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mon)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tue)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Wed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Thur)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fri)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sat)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sun)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HoursWorked)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
-<div>
+    <table class="table table-bordered table-hover timesheet-table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th>
+                    Monday
+                </th>
+                <th>
+                    Tuesday
+                </th>
+                <th>
+                    Wednesday
+                </th>
+                <th>
+                    Thursday
+                </th>
+                <th>
+                    Friday
+                </th>
+                <th>
+                    Saturday
+                </th>
+                <th>
+                    Sunday
+                </th>
+                <th>
+                    Total hours worked
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mon)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tue)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Wed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Thur)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fri)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sun)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HoursWorked)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
 
