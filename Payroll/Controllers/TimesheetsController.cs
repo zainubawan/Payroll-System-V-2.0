@@ -36,7 +36,7 @@ namespace Payroll.Controllers
             // TODO: needs to take a lambda expression and fetch timesheets for a particular user
             var timesheets = await _context.Timesheet
                 .Where(m => m.OwnerId == currentUser.Id)
-                .ToListAsync(); 
+                .ToListAsync();
 
             return View(timesheets);
         }
@@ -82,6 +82,7 @@ namespace Payroll.Controllers
             if (ModelState.IsValid)
             {
                 timesheet.OwnerId = currentUser.Id;
+                timesheet.HoursWorked = timesheet.Mon + timesheet.Tue + timesheet.Wed + timesheet.Thur + timesheet.Fri + timesheet.Sat + timesheet.Sun;
                 _context.Add(timesheet);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -125,6 +126,7 @@ namespace Payroll.Controllers
                 try
                 {
                     timesheet.OwnerId = currentUser.Id;
+                    timesheet.HoursWorked = timesheet.Mon + timesheet.Tue + timesheet.Wed + timesheet.Thur + timesheet.Fri + timesheet.Sat + timesheet.Sun;
                     _context.Update(timesheet);
                     await _context.SaveChangesAsync();
                 }
