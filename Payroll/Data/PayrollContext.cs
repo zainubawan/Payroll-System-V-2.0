@@ -24,5 +24,7 @@ namespace Payroll.Models
                 .Property(b => b.Status)
                 .HasDefaultValue("Pending");
         }
+
+        public DbSet<Payroll.Models.Payslip> Payslip { get; set; }
     }
 }
